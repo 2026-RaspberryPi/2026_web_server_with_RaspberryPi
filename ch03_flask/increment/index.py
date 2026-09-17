@@ -8,7 +8,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/save/<num>")
+@app.route("/<num>")
 def save_num_get(num):
     '''
         1. numcount 테이블 생성(id, num, insert_at)
@@ -17,7 +17,7 @@ def save_num_get(num):
         4. 연결끊기
         5. db 접속해서 조회
     '''
-    conn = pymysql.connect(host='localhost', user='bssmMrchoi', password='q1w2e3', db='study')
+    conn = pymysql.connect(host='localhost', user='root', password='q1w2e3', db='study')
     cur = conn.cursor()
     cur.execute("insert into numcount(num) values({0})".format(num))
     conn.commit()
