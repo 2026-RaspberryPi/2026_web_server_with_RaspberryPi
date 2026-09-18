@@ -24,7 +24,6 @@ class TodoDB:
         self.db.commit()
 
     def completed(self, todo_index):
-        # 만약 completed를 int로 잡았다면 completed = not completed 조건을 통해 토글형태 가능
         sql = f"update todos set completed='true' where todo_index={todo_index}"
         self.cur.execute(sql)
         self.db.commit()

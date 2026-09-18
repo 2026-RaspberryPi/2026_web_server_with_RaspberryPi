@@ -29,9 +29,14 @@
                     <span class="{% if task[2]=='true' %}completed{% endif %}">
                         {{ task[1] }}
                     </span>
-                    <!-- loop.index0 : 0부터 시작하는 인덱스 값 반환 -->
-                    <a href="/complete/{{ loop.index0 }}" class="btn btn-success btn-sm ml-2">Complete</a>
-                    <a href="/delete/{{ loop.index0 }}" class="btn btn-danger btn-sm ml-2">Delete</a>
+			<button type="button" class="btn btn-success btn-sm ml-2"
+        			onclick="fetch('/complete/{{ task[0] }}', { method: 'PATCH' }).then(() => location.reload())">
+    			Complete
+			</button>
+			<button type="button" class="btn btn-danger btn-sm ml-2"
+        			onclick="fetch('/delete/{{ task[0] }}', { method: 'DELETE' }).then(() => location.reload())">
+    			Delete
+			</button>
                 </li>
             {% endfor %}
         </ul>
