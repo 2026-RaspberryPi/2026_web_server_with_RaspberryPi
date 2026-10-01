@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+  <div class="card-group">
+  {% for photo in photos %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{photo['url']}}" class="card-img-top" alt="로딩중중">
+      
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">{{photo['title']}}</p>
+        </div>
+      </div>
+  {% endfor %}
+  </div>
+  <a class="btn btn-primary" id="more">more photos</a>
+  <!-- 버튼을 누를 때마다 이 안에 사진 한 줄씩 추가됨 -->
+  <div id="gallery"></div>
+
+  <script src="static/index.js"></script>
+</body>
+</html>
