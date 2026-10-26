@@ -24,4 +24,7 @@ class DHT11:
         sql = "select * from record_dht"
         self.cur.execute(sql)
         result = self.cur.fetchall()
-        return result
+        results = list()
+        for d in result:
+            results.append({'no':d[0], 'date': d[3], 'temp': d[2], 'hum': d[1]})
+        return results

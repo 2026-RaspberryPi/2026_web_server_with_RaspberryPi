@@ -29,10 +29,10 @@ record.addEventListener("click", function() {
         for(var i in result) {
           var data = result[i]
           tabledata += "<tr>"
-          tabledata += "<td>"+data[0]+"</td>"
-          tabledata += "<td>"+data[3]+"</td>"
-          tabledata += "<td>"+data[2]+"*C</td>"
-          tabledata += "<td>"+data[1]+"%</td>"
+          tabledata += "<td>"+data.no+"</td>"
+          tabledata += "<td>"+data.date+"</td>"
+          tabledata += "<td>"+data.temp+"*C</td>"
+          tabledata += "<td>"+data.hum+"%</td>"
           tabledata += "</tr>"
         }
         document.getElementById("table").innerHTML = tabledata
